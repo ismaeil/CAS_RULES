@@ -1,0 +1,17 @@
+diff --git a/cas.module b/cas.module
+index 338fa7a..f7e5055 100644
+--- a/cas.module
++++ b/cas.module
+@@ -158,6 +158,12 @@ function cas_login_check() {
+       user_login_finalize($edit);
+ 
+       drupal_set_message(t(variable_get('cas_login_message', 'Logged in via CAS as %cas_username.'), array('%cas_username' => $user->name)));
++
++      // Make this event available for Rules module.
++      if (module_exists('rules')) {
++        rules_invoke_event('authentification_via_cas');
++      }
++
+       if (!empty($edit['persistent_login'])) {
+         drupal_set_message(t('You will remain logged in on this computer even after you close your browser.'));
+       }
