@@ -1,0 +1,8 @@
+A hack into the Drupal CAS module (7.x-1.1 version) to add integration with Rules Module (version 7.x-2.0).
+
+This adds a new event to the Drupal module Rules event list named "User is authentificated via CAS module"
+thet is performing after an authentification via the CAS module.
+
+Usage
+* Add the cas.rules.inc file to cas directory.
+* Apply the patch against cas.module 
