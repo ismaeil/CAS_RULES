@@ -9,7 +9,7 @@ index 338fa7a..f7e5055 100644
 +
 +      // Make this event available for Rules module.
 +      if (module_exists('rules')) {
-+        rules_invoke_event('authentification_via_cas');
++        rules_invoke_event('cas_login');
 +      }
 +
        if (!empty($edit['persistent_login'])) {
